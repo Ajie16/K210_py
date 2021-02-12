@@ -1,0 +1,18 @@
+import utime
+from Maix import GPIO
+from fpioa_manager import fm
+while True:
+    fm.register(13,fm.fpioa.GPIO0)
+    fm.register(12,fm.fpioa.GPIO1)
+    fm.register(14,fm.fpioa.GPIO2)
+    led_r=GPIO(GPIO.GPIO0,GPIO.OUT)
+    led_g=GPIO(GPIO.GPIO1,GPIO.OUT)
+    led_b=GPIO(GPIO.GPIO2,GPIO.OUT)
+    utime.sleep_ms(500)
+    led_r.value(1)
+    led_g.value(1)
+    led_b.value(1)
+    utime.sleep_ms(500)
+    led_r.value(0)
+    led_g.value(0)
+    led_b.value(0)
